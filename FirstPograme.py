@@ -154,18 +154,33 @@ print("Hello, World!")
 # else:
 #     print("Not Palindrome")
 
-set1 = {"a","b","c"}
-set2 = {"b","d","a","b"}
+# set1 = {"a","b","c"}
+# set2 = {"b","d","a","b"}
 
-set3 = set1 | set2
-set4 = set1 & set2
-set5 = set1 - set2
-set6 = set2 - set1
-print(set1)
-print(set2)
-print(set3)
-print(set4)
-print(set5)
-print(set6)
-print("is 'a' present in set1 ?", {'e' in set1})
+# set3 = set1 | set2
+# set4 = set1 & set2
+# set5 = set1 - set2
+# set6 = set2 - set1
+# print(set1)
+# print(set2)
+# print(set3)
+# print(set4)
+# print(set5)
+# print(set6)
+# print(f"is 'a' present in set1 ? {'e' in set1} ")
 
+# dict1 = dict(key1="value1",key2="value2",key3=5)
+# # print(dict1)
+# dict2 = {}
+# dict2["key1"] = "value1"
+# dict2["key2"] = "value2"
+# dict2["key3"] = 3
+# print(dict2)
+
+# print(f"value1 in dict {'value1' in dict2.values()}")
+
+# dict3 = dict1 | dict2
+# print(dict3)
+
+# key4 = dict2.get("key4","no key")
+# print(key4)
