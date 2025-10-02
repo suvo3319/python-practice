@@ -184,3 +184,112 @@ print("Hello, World!")
 
 # key4 = dict2.get("key4","no key")
 # print(key4)
+
+#ternary operator
+# package_price = int(input("Enter the package amount:"))
+
+# delivary_fee = 0 if package_price > 300 else 30
+
+# print(f"The total charge for the package is: {package_price + delivary_fee}")
+
+# seat_type = input("Enter your preffered seat type (general/seater/sleeper/ac):").lower()
+
+# match seat_type:
+#     case "general":
+#         print("You will not have any personal seat")
+#     case "seater":
+#         print("You will get to seat down")
+#     case "sleeper":
+#         print("You will get a whole seat to sleep with food")
+#     case "ac":
+#         print("You will get ac coach with proper blanket & food")
+#     case _:
+#         print("User preference isn't availaible")
+
+# Observation: The loop will run whichver list is small that many time only..
+
+# orders = ["person 1","person 2","person 3","person 4"]
+# bill_paid = [100,150,120]
+
+# # for x in range(1,5):
+# #     print(f"Your order number is {x}")
+
+# # for names in orders:
+# #     print(f"{names} orders food")
+
+# # for idx,names in enumerate(orders,start=1):
+# #     print(f"{names} is order no {idx}")
+
+# # for name,index in zip(orders,bill_paid):
+# #     print(f"{name} paid total ${index}")
+
+# temparature = int(input("Enter the temperature of the water:"))
+
+# while(temparature < 100):
+#     print(f"temperature is {temparature} degree And water is yet to boiled")
+#     temparature+=15
+# print("Water is boiled..")
+
+# # for-else loop
+
+# staff = [("person 1",16),("person 2",13),("person 3",15)]
+
+# for name,age in staff:
+#     if(age>=18):
+#         print(f"{name} is eligible to work")
+#         break
+# else:
+#     print("No one is eligible to work")
+
+# flavours = ["orange","mango","out of stock","lemon","discontinued","jeera"]
+
+# for flavour in flavours:
+#     if(flavour == "out of stock"):
+#         continue
+#     if(flavour == "discontinued"):
+#         break
+#     print(f"the flavour is {flavour}")
+# print("end of the loop")
+
+# walrus...
+
+# flavours = ["orange","mango","lemon","jeera"]
+
+# # user_input = input("Enter your desired flavour:").lower()
+
+# # for flavour in flavours:
+# #     if(flavour == user_input):
+# #         print(f"{flavour} is available in our store")
+# #         break
+# # else:
+# #     print(f"{user_input} flavour isn't availaible")
+
+# #     #instead of doing this we can do : 
+
+
+
+# if (user_input := input("Enter your desired flavour:").lower()) in flavours:
+#     print(f"{user_input} is available in our store")
+# else:
+#     print(f"{user_input} flavour isn't availaible")
+
+# dictionary ises
+
+customers = [
+    {"name":"Abhi","total":200,"cupon":"B20_40"},
+    {"name":"Raj","total":230,"cupon":"F25"},
+    {"name":"John","total":450,"cupon":"P50"},
+]
+
+discounts = {
+    "P10":(0.1,0),
+    "F25":(0,25),
+    "P50":(0.5,0),
+    "B20_40":(0.2,40)
+}
+
+for customer in customers:
+    percent,fix = discounts.get(customer["cupon"],(0,0))
+    discount = customer["total"] * percent + fix
+    print(f"{customer["name"]} paid total {customer["total"]} rupees and get {discount} rupees discount on next order.")
+    
