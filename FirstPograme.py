@@ -275,21 +275,65 @@ print("Hello, World!")
 
 # dictionary ises
 
-customers = [
-    {"name":"Abhi","total":200,"cupon":"B20_40"},
-    {"name":"Raj","total":230,"cupon":"F25"},
-    {"name":"John","total":450,"cupon":"P50"},
-]
+# customers = [
+#     {"name":"Abhi","total":200,"cupon":"B20_40"},
+#     {"name":"Raj","total":230,"cupon":"F25"},
+#     {"name":"John","total":450,"cupon":"P50"},
+# ]
 
-discounts = {
-    "P10":(0.1,0),
-    "F25":(0,25),
-    "P50":(0.5,0),
-    "B20_40":(0.2,40)
-}
+# discounts = {
+#     "P10":(0.1,0),
+#     "F25":(0,25),
+#     "P50":(0.5,0),
+#     "B20_40":(0.2,40)
+# }
 
-for customer in customers:
-    percent,fix = discounts.get(customer["cupon"],(0,0))
-    discount = customer["total"] * percent + fix
-    print(f"{customer["name"]} paid total {customer["total"]} rupees and get {discount} rupees discount on next order.")
+# for customer in customers:
+#     percent,fix = discounts.get(customer["cupon"],(0,0))  #take 0,0 as default
+#     discount = customer["total"] * percent + fix
+#     print(f"{customer["name"]} paid total {customer["total"]} rupees and get {discount} rupees discount on next order.")
     
+# *****Functions***** Reducing duplicity, Spliting complex tasks, Hiding implementation details, redability, tracability
+
+# def fetch_data():
+#     print("Fetching the data")
+
+# def analyze_data():
+#     print("Analyzing the data")
+
+# def summarize_data():
+#     print("Summerizing the data")
+
+# def full_report():
+#     fetch_data()
+#     analyze_data()
+#     summarize_data()
+#     print("This is the summarized report")
+
+# full_report()
+
+
+# def tax_product(price,tax):
+#     return price * (100 + tax)/100
+
+# orders = [100,150,200]
+
+# for order in orders:
+#     final_amount = tax_product(order,10)
+#     print(f"Product original price is {order} & the final prics is {int(final_amount)}")
+
+#  ******Scope******  local, global, enclosed, built-in (input, print, etc.)
+
+data_type = "Global variable"
+
+def outer_function():
+    data_type = "Outer variable"
+    print(data_type)
+    def inner_function():
+        # print(data_type)
+        # data_type = "Inner variable"
+        print(data_type) # nested, if not defined will use parent one
+    inner_function()
+    print(data_type)
+print(data_type)
+outer_function()
